@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, PrimaryColumn } from 'typeorm';
+import { Car } from 'src/car/entities/car.entity';
+import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, PrimaryColumn, OneToMany } from 'typeorm';
 
 @Entity({name: 'customer', schema: 'taller_perez_db'})
 export class Customer {
@@ -19,11 +20,14 @@ export class Customer {
     @Column({length: 20})
     phone: string;
 
-    @CreateDateColumn()
+    @CreateDateColumn({type: 'timestamp'})
     createdAt: Date;
 
     @UpdateDateColumn()
     updatedAt: Date;
+
+    @OneToMany(() => Car, car => car.cus)
+    cars: Car[];
 
 }
 
