@@ -7,8 +7,7 @@ import { CreateCarDto } from './dto/create-car.dto';
 @Controller('car')
 export class CarController {
 
-    constructor(private readonly customerService: CustomerService,
-                private readonly carService:CarService) {}
+    constructor(private readonly carService:CarService) {}
 
     @Post()
     async newCarByCustomer(@Body() dto: CreateCarDto) {

@@ -1,5 +1,6 @@
 import { Customer } from 'src/customer/entities/customer.entity';
-import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, PrimaryColumn, ManyToOne, JoinColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, PrimaryColumn, ManyToOne, JoinColumn, OneToMany } from 'typeorm';
+import { CarDiagnostic } from '../../diagnostic/entities/diagnostic.entity';
 
 @Entity({name: 'car', schema: 'taller_perez_db'})
 export class Car {
@@ -31,5 +32,7 @@ export class Car {
     @JoinColumn({ name: 'customerId' })
     cus: Customer;
 
+    @OneToMany(() => CarDiagnostic, diag => diag.car)
+    diagnostics: CarDiagnostic[];
 }
 
