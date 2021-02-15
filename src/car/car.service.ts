@@ -4,6 +4,7 @@ import { Customer } from 'src/customer/entities/customer.entity';
 import { Repository } from 'typeorm';
 import { Car } from './entities/car.entity';
 import { CreateCarDto } from './dto/create-car.dto';
+import { CarDiagnostic } from '../diagnostic/entities/diagnostic.entity';
 
 @Injectable()
 export class CarService {
@@ -22,7 +23,13 @@ export class CarService {
             car.cus = customer;
             return await this.carRepository.save(car);
         }
-        
+    }
+
+    async getDiagnosticByCar(id: number) {
+        const carDiagnostics = await this.carRepository.findOne(id, {
+            relations: ['diagnostics']
+        });
+        return carDiagnostics;
     }
 
 }
