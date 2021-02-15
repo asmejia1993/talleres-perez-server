@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Customer } from 'src/customer/entities/customer.entity';
+import { Customer } from '../customer/entities/customer.entity';
 import { Repository } from 'typeorm';
 import { Car } from './entities/car.entity';
 import { CreateCarDto } from './dto/create-car.dto';
-import { CarDiagnostic } from '../diagnostic/entities/diagnostic.entity';
+
 
 @Injectable()
 export class CarService {

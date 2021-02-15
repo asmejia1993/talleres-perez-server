@@ -1,4 +1,4 @@
-import { Car } from 'src/car/entities/car.entity';
+import { Car } from '../../car/entities/car.entity';
 import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, PrimaryColumn, ManyToOne, JoinColumn } from 'typeorm';
 
 @Entity({name: 'diagnostic_analysis', schema: 'taller_perez_db'})

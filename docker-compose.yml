@@ -1,0 +1,22 @@
+version: "3"
+
+services: 
+
+    #MySql database for the app
+    mysql:
+            container_name: mysqlContainer
+            build: 
+              context: ./dbservice
+
+    #backend project on nestjs
+    app-service:
+            container_name: taller-perez-server
+            restart: always
+            build: 
+              context: .
+            ports: 
+                  - "3000:3000"
+            links: 
+                  - mysql
+            volumes: 
+                  - .:/usr/src/app

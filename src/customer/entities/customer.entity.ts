@@ -1,10 +1,10 @@
-import { Car } from 'src/car/entities/car.entity';
-import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, PrimaryColumn, OneToMany } from 'typeorm';
+import { Car } from '../../car/entities/car.entity';
+import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, PrimaryColumn, OneToMany, BaseEntity } from 'typeorm';
 
 @Entity({name: 'customer', schema: 'taller_perez_db'})
-export class Customer {
+export class Customer extends BaseEntity {
 
-    @PrimaryGeneratedColumn()
+    @PrimaryGeneratedColumn('increment')
     @PrimaryColumn({name: 'idCustomer', type: 'bigint'})
     id: number;
 

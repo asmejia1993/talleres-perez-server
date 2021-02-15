@@ -1,4 +1,4 @@
-import { Customer } from 'src/customer/entities/customer.entity';
+import { Customer } from '../../customer/entities/customer.entity';
 import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, PrimaryColumn, ManyToOne, JoinColumn, OneToMany } from 'typeorm';
 import { CarDiagnostic } from '../../diagnostic/entities/diagnostic.entity';
 

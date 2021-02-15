@@ -10,7 +10,8 @@ import { DiagnosticModule } from './diagnostic/diagnostic.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'localhost',
+      //host: 'localhost',
+      host: 'mysql',
       port: 3306,
       username: 'root',
       password: 'admin',
@@ -22,7 +23,7 @@ import { DiagnosticModule } from './diagnostic/diagnostic.module';
     CustomerModule,
     CarModule,
     DiagnosticModule],
-  controllers: [AppController],
+  controllers: [AppController,],
   providers: [AppService], 
 })
 export class AppModule {}

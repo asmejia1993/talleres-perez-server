@@ -1,6 +1,6 @@
 import { Body, Controller, Post, HttpStatus, Get, Param, ParseIntPipe } from '@nestjs/common';
 import { ApiBody, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { GeneralResponse } from 'src/model/general-response.model';
+import { GeneralResponse } from '../model/general-response.model';
 import { CarService } from './car.service';
 import { CreateCarDto } from './dto/create-car.dto';
 

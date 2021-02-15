@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CarDiagnostic } from './entities/diagnostic.entity';
 import { CreateCarDiagnosticDto } from './dto/create-car-diagnostic.dto';
-import { Car } from 'src/car/entities/car.entity';
+import { Car } from '../car/entities/car.entity';
 
 @Injectable()
 export class DiagnosticService {
