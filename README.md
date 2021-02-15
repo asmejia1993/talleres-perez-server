@@ -38,5 +38,6 @@ $ npm run test:e2e
 * docker-compose build
 * docker-compose up
 
-## Stay in touch
+## Script para correr la base de datos
+Estan alojados en la carpeta dbservice
 
