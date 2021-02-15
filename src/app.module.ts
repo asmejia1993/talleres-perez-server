@@ -10,8 +10,8 @@ import { DiagnosticModule } from './diagnostic/diagnostic.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      //host: 'localhost',
-      host: 'mysql',
+      host: 'localhost',
+      //shost: 'mysql',
       port: 3306,
       username: 'root',
       password: 'admin',
