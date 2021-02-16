@@ -1,7 +1,7 @@
 
 ## Description
 
-Backen server para Talleres Perez & Perez
+Backend server para Talleres Perez & Perez
 
 ## Installation
 
@@ -40,4 +40,7 @@ $ npm run test:e2e
 
 ## Script para correr la base de datos
 Estan alojados en la carpeta dbservice
+
+## URL Documentacion de Swagger
+http://localhost:3000/docs/#/
 
