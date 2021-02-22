@@ -7,7 +7,9 @@ services:
             container_name: mysqlContainer
             build: 
               context: ./dbservice
-
+            environment: 
+                 - TYPEORM_HOST=mysql
+            
     #backend project on nestjs
     app-service:
             container_name: taller-perez-server
