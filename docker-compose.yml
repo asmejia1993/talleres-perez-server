@@ -1,19 +1,26 @@
-version: "3"
+version: '3.1'
 
 services: 
 
     #MySql database for the app
     mysql:
+            command: --default-authentication-plugin=mysql_native_password
             container_name: mysqlContainer
             build: 
               context: ./dbservice
-            environment: 
-                 - TYPEORM_HOST=mysql
-            
+            environment:
+                  MYSQL_USER: root
+                  MYSQL_ROOT_PASSWORD: admin
+                        - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+
     #backend project on nestjs
     app-service:
             container_name: taller-perez-server
             restart: always
+            env_file:
+                  - .env
+            environment: 
+                  - TYPEORM_HOST=mysql
             build: 
               context: .
             ports: 
