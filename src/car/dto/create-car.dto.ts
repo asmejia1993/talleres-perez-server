@@ -1,4 +1,4 @@
-import { Customer } from "src/customer/entities/customer.entity";
+import { Customer } from '../../customer/entities/customer.entity';
 
 export class CreateCarDto {
     model: string;
